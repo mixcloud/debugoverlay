@@ -7,7 +7,6 @@ import android.content.ServiceConnection;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.support.annotation.NonNull;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -81,7 +80,7 @@ public class DebugOverlay {
          * DO NOT INVOKE THIS DIRECTLY. Should only be invoked from internally to establish a
          * connection to the service
          */
-        private void setService(@NonNull DebugOverlayService service) {
+        private void setService(DebugOverlayService service) {
             if (service == null) {
                 throw new NullPointerException(
                         DebugOverlayService.class.getSimpleName() + " is null! That's not allowed");
@@ -101,7 +100,7 @@ public class DebugOverlay {
          *
          * @param msg The message to dispatchOnMainUiThread
          */
-        public void enqueueMessage(@NonNull String msg) {
+        public void enqueueMessage(String msg) {
             if (service != null) {
                 dispatchOnMainUiThread(msg);
             } else {

@@ -5,10 +5,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hannesdorfmann.debugoverlay.DebugOverlay;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
 
+
     Intent myIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
     myIntent.setData(Uri.parse("package:" + getPackageName()));
-    startActivityForResult(myIntent, APP_PERMISSIONS);
+    startActivity(myIntent);
   }
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
