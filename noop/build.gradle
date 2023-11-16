@@ -20,3 +20,5 @@ android {
 }
 
 dependencies {}
+
+apply from: '../maven-push.gradle'
