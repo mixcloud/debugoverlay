@@ -3,6 +3,8 @@ plugins {
 }
 
 android {
+  namespace 'com.hannesdorfmann.debugoverlay'
+
   compileSdkVersion 33
 
   defaultConfig {
@@ -15,6 +17,13 @@ android {
     release {
       minifyEnabled true
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  publishing {
+    singleVariant('release') {
+      withSourcesJar()
+      withJavadocJar()
     }
   }
 }
