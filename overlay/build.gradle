@@ -3,6 +3,8 @@ plugins {
 }
 
 android {
+  namespace 'com.hannesdorfmann.debugoverlay'
+
   compileSdkVersion 33
 
   defaultConfig {
